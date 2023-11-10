@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}">Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></head>
+<body>
+
+	 <nav>
+     	<div class='nav-list'>
+        	<ul class="nav-links">
+				<li><a th:href="@{/form}">Spring Boot - JPA 🍃</a></li>  
+                <li><a th:href="@{/form}">Crear cliente</a></li>
+                <li><a th:href="@{/listar}">Clientes</a></li>         
+            </ul>
+        </div>
+	</nav>
+
+	<div class="container">
+		<h1 th:text="${titulo}"
+			class="text-secondary border border-success border-top-0 border-left-0 border-right-0"></h1>
+
+		<div th:object="${cliente}" th:remove="tag">
+			<ul th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+				<li th:each="err: ${#fields.errors('*')}" th:text="${err}"></li>
+			</ul>
+		</div>
+		
+		<form th:action="@{/form}" th:object="${cliente}" method="post">
+					
+			<div class="campo">
+				<label class="titulo-campos">Nombre</label>
+				<div>
+					<input class="input-campo" type="text" th:field="*{nombre}"/>
+					<p class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></p>	
+				</div>
+			</div>
+			
+			<div class="campo">
+				<label class="titulo-campos">Apellido</label>
+				<div>
+					<input class="input-campo" type="text" th:field="*{apellido}"/>
+					<p class="error" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></p>	
+				</div>
+			</div>
+			
+			<div class="campo">
+				<label class="titulo-campos">Email</label>
+				<div>
+					<input class="input-campo" type="text" th:field="*{email}"/>
+					<p class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>		
+				</div>
+			</div>
+				
+    		<input class="btn-crear-cliente-input" type="submit" th:value="${botonMensaje}"/>
+	
+			<input type="hidden" th:field="*{id}"/>
+		</form>
+	</div>
+</body>
+</html>
