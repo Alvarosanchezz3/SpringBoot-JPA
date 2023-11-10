@@ -1,6 +1,6 @@
 # Spring Boot Cliente App 🌱
 
-Esta es una aplicación de ejemplo construida con Spring Boot que gestiona información de clientes.
+Aplicación de gestión de clientes desarrollada con Spring Boot. Realiza operaciones CRUD e incluye estructura MVC, capa de acceso a datos con Spring Data JPA y una interfaz web para listar, crear, editar y eliminar clientes.
 
 ## Clases Principales 🧑‍💻
 
