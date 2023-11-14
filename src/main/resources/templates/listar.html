@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8" />
-<title th:text="${titulo}">Insert title here</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></head>
+<head th:replace="layout/layout :: head"></head>
 <body>
 
-	<nav>
-     	<div class='nav-list'>
-        	<ul class="nav-links">
-				<li><a th:href="@{/form}">Spring Boot - JPA 🍃</a></li>  
-                <li><a th:href="@{/form}">Crear cliente</a></li>
-                <li><a th:href="@{/listar}">Clientes</a></li>         
-            </ul>
-        </div>
-	</nav>
+	<header th:replace="layout/layout :: header"></header>
 
 	<div class="container">
 		<h1 th:text="${titulo}"></h1>

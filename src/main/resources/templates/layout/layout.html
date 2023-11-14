@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head th:frament="head">
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}">Insert title here</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header th:frament="header">
+	 	<nav>
+	     	<div class='nav-list'>
+	        	<ul class="nav-links">
+					<li><a th:href="@{/form}">Spring Boot - JPA 🍃</a></li>  
+	                <li><a th:href="@{/form}">Crear cliente</a></li>
+	                <li><a th:href="@{/listar}">Clientes</a></li>         
+	            </ul>
+	        </div>
+		</nav>
+	</header>
+</body>
+</html>
